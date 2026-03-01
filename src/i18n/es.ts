@@ -30,7 +30,7 @@ export const es: Translations = {
     languages: 'Idiomas',
     languagesValue: 'Español, Inglés',
     education: 'Educación',
-    educationValue: 'TSU en Informática — IUTRBF, 2017',
+    educationValue: 'TSU en Informática — IUTRBF, 2016',
   },
 
   // Experience
@@ -123,6 +123,7 @@ export const es: Translations = {
   // CV page
   cv: {
     pageTitle: 'Luis Ramos — CV',
+    authorName: 'Luis Enrique Ramos',
     about: 'Senior Software Engineer con más de 7 años de experiencia en desarrollo web. Actualmente desempeñándome como Tech Lead, enfocado en arquitectura frontend, design systems, mejora de procesos y experiencia de desarrollador.',
     sections: {
       experience: 'Experiencia',
@@ -132,7 +133,7 @@ export const es: Translations = {
     education: {
       degree: 'TSU en Informática',
       institution: 'IUTRBF — Instituto Universitario de Tecnología de la Región Capital',
-      period: '2014 — 2017',
+      period: '2013 — 2016',
     },
     print: 'Imprimir / Descargar PDF',
     backToPortfolio: 'Volver al portafolio',

@@ -28,7 +28,7 @@ export const en = {
     languages: 'Languages',
     languagesValue: 'Spanish, English',
     education: 'Education',
-    educationValue: 'Technical Diploma in CS — IUTRBF, 2017',
+    educationValue: 'Technical Diploma in CS — IUTRBF, 2016',
   },
 
   // Experience
@@ -121,6 +121,7 @@ export const en = {
   // CV page
   cv: {
     pageTitle: 'Luis Ramos — CV',
+    authorName: 'Luis Enrique Ramos',
     about: 'Senior Software Engineer with 7+ years of experience in web development. Currently serving as Tech Lead, focused on frontend architecture, design systems, process improvement, and developer experience.',
     sections: {
       experience: 'Experience',
@@ -130,7 +131,7 @@ export const en = {
     education: {
       degree: 'Technical Diploma in Computer Science',
       institution: 'IUTRBF — Instituto Universitario de Tecnología de la Región Capital',
-      period: '2014 — 2017',
+      period: '2013 — 2016',
     },
     print: 'Print / Download PDF',
     backToPortfolio: 'Back to portfolio',
