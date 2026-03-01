@@ -13,24 +13,24 @@ export const es: Translations = {
   // Hero
   hero: {
     greeting: 'Hola, soy',
-    role: 'Desarrollador Full-Stack Senior',
-    tagline: 'Construyo sistemas escalables e interfaces elegantes — desde la base de datos hasta el píxel.',
+    role: 'Senior Software Engineer',
+    tagline: 'Más de 7 años construyendo aplicaciones web — enfocado en arquitectura frontend, mejora de procesos y experiencia de desarrollador.',
     cta: 'Ver mi trabajo',
-    available: 'Disponible para freelance',
+    available: 'Disponible para nuevos proyectos',
   },
 
   // About
   about: {
     title: 'Sobre mí',
     label: '01 / sobre mí',
-    bio1: 'Soy un desarrollador full-stack con más de 8 años de experiencia creando productos digitales que combinan rendimiento con una gran experiencia de usuario. Me encanta trabajar en la intersección entre la arquitectura backend y el cuidado por el frontend.',
-    bio2: 'Cuando no estoy escribiendo código, probablemente estoy haciendo senderismo en la montaña, experimentando con proporciones de espresso o leyendo sobre sistemas distribuidos.',
+    bio1: 'Soy un ingeniero de software con más de 7 años de experiencia en desarrollo web, actualmente desempeñándome como Tech Lead. He diseñado Design Systems con Tailwind CSS, creado librerías de componentes con React/Vite, y establecido templates preconfigurados con Next.js.',
+    bio2: 'Me apasiona la arquitectura frontend, la mejora de procesos y potenciar la experiencia de desarrollador (DX) en cada equipo donde trabajo.',
     location: 'Ubicación',
-    locationValue: 'Barcelona, España',
+    locationValue: 'Santiago, Chile',
     languages: 'Idiomas',
-    languagesValue: 'Inglés, Español, Portugués',
+    languagesValue: 'Español, Inglés',
     education: 'Educación',
-    educationValue: 'Grado en Ing. Informática — UPC, 2016',
+    educationValue: 'TSU en Informática — IUTRBF, 2017',
   },
 
   // Experience
@@ -40,25 +40,46 @@ export const es: Translations = {
     present: 'Presente',
     roles: [
       {
-        title: 'Desarrollador Full-Stack Senior',
-        company: 'NovaTech',
-        period: '2021 — Presente',
-        description: 'Arquitecto principal de una plataforma SaaS de analíticas con más de 200k usuarios. Migré el monolito a microservicios, reduciendo la latencia p99 en un 60%. Mentoricé a un equipo de 6 ingenieros.',
-        stack: ['TypeScript', 'React', 'Node.js', 'PostgreSQL', 'AWS'],
+        title: 'Tech Lead',
+        company: 'MetLife (Imagemaker S.A.)',
+        period: '2024 — Presente',
+        description: 'Lidero un equipo de 4 desarrolladores implementando patrones de diseño y buenas prácticas. Promoví principios SOLID, implementé un Motor de Reglas de Negocio y optimicé la base de datos SQL Server para más de 2000 usuarios.',
+        stack: ['React', 'NestJS', 'Groovy', 'SQL Server', 'Azure DevOps'],
       },
       {
-        title: 'Desarrollador Full-Stack',
-        company: 'CodeCraft Studio',
+        title: 'Software Developer',
+        company: 'MetLife (Imagemaker S.A.)',
+        period: '2023 — 2024',
+        description: 'Desarrollo de aplicaciones web React para gestión de clientes/ventas de seguros. Servicios backend con NestJS para una aplicación con más de 2000 usuarios. Promoví principios SOLID y prácticas de pair programming.',
+        stack: ['React', 'NestJS', 'TypeScript', 'SQL Server'],
+      },
+      {
+        title: 'Frontend Tech Lead',
+        company: 'Preuniversitario Pedro de Valdivia',
+        period: '2022 — 2023',
+        description: 'Lideré el equipo frontend en aplicaciones educativas con React/Next.js. Creé un Design System con Tailwind CSS junto al equipo UI/UX. Desarrollé un paquete de componentes personalizado y un template Next.js preconfigurado.',
+        stack: ['React', 'Next.js', 'Tailwind CSS', 'React Query', 'Next Auth'],
+      },
+      {
+        title: 'Senior Frontend Developer',
+        company: 'Preuniversitario Pedro de Valdivia',
+        period: '2021 — 2022',
+        description: 'Desarrollo con React/Next.js para sistemas de gestión educativa.',
+        stack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      },
+      {
+        title: 'Fullstack Developer',
+        company: 'BIOHAZARD STUDIOS',
         period: '2018 — 2021',
-        description: 'Desarrollé aplicaciones web y herramientas internas para una agencia de producto. Entregué más de 15 proyectos en verticales de fintech, salud y e-commerce.',
-        stack: ['React', 'Node.js', 'GraphQL', 'MongoDB', 'Docker'],
+        description: 'Desarrollo de sitios web estáticos y dinámicos, SPAs con React, APIs REST con PHP/Laravel y aplicaciones híbridas con Cordova.',
+        stack: ['React', 'PHP', 'Laravel', 'JavaScript', 'MySQL'],
       },
       {
-        title: 'Desarrollador Frontend Junior',
-        company: 'PixelWave',
-        period: '2016 — 2018',
-        description: 'Desarrollé interfaces responsivas pixel-perfect a partir de mockups de diseño. Mejoré las puntuaciones de Lighthouse de ~55 a 90+ en todo el sitio.',
-        stack: ['JavaScript', 'Vue.js', 'SCSS', 'Figma'],
+        title: 'Junior Web Developer',
+        company: 'Meditron C.A.',
+        period: '2016 — 2017',
+        description: 'Mantenimiento de sistema de inventario PHP y desarrollo de nuevo sistema con Laravel/jQuery. Implementación de Git en el equipo.',
+        stack: ['PHP', 'Laravel', 'jQuery', 'MySQL', 'Git'],
       },
     ],
   },
@@ -70,15 +91,19 @@ export const es: Translations = {
     categories: [
       {
         name: 'Frontend',
-        items: ['TypeScript', 'React', 'Astro', 'Next.js', 'Tailwind CSS', 'Figma'],
+        items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Atomic Design'],
       },
       {
         name: 'Backend',
-        items: ['Node.js', 'PostgreSQL', 'Redis', 'GraphQL', 'REST APIs', 'Python'],
+        items: ['Node.js', 'NestJS', 'PHP', 'Laravel'],
       },
       {
-        name: 'Infraestructura',
-        items: ['Docker', 'AWS', 'GitHub Actions', 'Terraform', 'Linux', 'Nginx'],
+        name: 'Bases de Datos',
+        items: ['MySQL', 'SQL Server'],
+      },
+      {
+        name: 'DevOps / Herramientas',
+        items: ['Git', 'GitHub', 'Microsoft Azure', 'Azure DevOps'],
       },
     ],
   },
@@ -88,16 +113,34 @@ export const es: Translations = {
     title: 'Hablemos',
     label: '04 / contacto',
     description: '¿Tienes un proyecto en mente o simplemente quieres conectar? Mi bandeja de entrada siempre está abierta.',
-    email: 'alex@rivera.dev',
-    github: 'github.com/alexrivera',
-    linkedin: 'linkedin.com/in/alexrivera',
-    twitter: '@alexrivera_dev',
+    email: 'me@luisr.dev',
+    github: 'github.com/luisrdev',
+    linkedin: 'linkedin.com/in/luisrdev',
+    twitter: '',
     cta: 'Envíame un email',
+  },
+
+  // CV page
+  cv: {
+    pageTitle: 'Luis Ramos — CV',
+    about: 'Senior Software Engineer con más de 7 años de experiencia en desarrollo web. Actualmente desempeñándome como Tech Lead, enfocado en arquitectura frontend, design systems, mejora de procesos y experiencia de desarrollador.',
+    sections: {
+      experience: 'Experiencia',
+      education: 'Educación',
+      skills: 'Habilidades',
+    },
+    education: {
+      degree: 'TSU en Informática',
+      institution: 'IUTRBF — Instituto Universitario de Tecnología de la Región Capital',
+      period: '2014 — 2017',
+    },
+    print: 'Imprimir / Descargar PDF',
+    backToPortfolio: 'Volver al portafolio',
   },
 
   // Footer
   footer: {
     built: 'Hecho con Astro & Tailwind CSS',
-    rights: 'Alex Rivera. Todos los derechos reservados.',
+    rights: 'Luis Ramos. Todos los derechos reservados.',
   },
 };

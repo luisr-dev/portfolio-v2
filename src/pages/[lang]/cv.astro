@@ -1,0 +1,423 @@
+---
+import { useTranslations } from '../../i18n';
+import type { Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+const otherLang = lang === 'en' ? 'es' : 'en';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={t.cv.pageTitle} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{t.cv.pageTitle}</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        color: #1a1a1a;
+        background: #fff;
+        line-height: 1.6;
+        font-size: 15px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .cv-page {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 40px 32px;
+      }
+
+      /* Top bar */
+      .cv-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .cv-topbar a {
+        font-size: 13px;
+        color: #555;
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+
+      .cv-topbar a:hover {
+        color: #0066cc;
+      }
+
+      .cv-actions {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .btn-print {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #fff;
+        background: #1a1a1a;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+
+      .btn-print:hover {
+        background: #333;
+      }
+
+      .lang-switch {
+        font-size: 12px;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        color: #555;
+        text-decoration: none;
+        transition: border-color 0.15s, color 0.15s;
+      }
+
+      .lang-switch:hover {
+        border-color: #999;
+        color: #1a1a1a;
+      }
+
+      /* Header */
+      .cv-header {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 2px solid #1a1a1a;
+      }
+
+      .cv-photo {
+        flex-shrink: 0;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(100%);
+      }
+
+      .cv-header-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .cv-header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        margin-bottom: 4px;
+      }
+
+      .cv-header .role {
+        font-size: 17px;
+        color: #444;
+        margin-bottom: 12px;
+      }
+
+      .cv-contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        font-size: 13px;
+        color: #555;
+      }
+
+      .cv-contact-row a {
+        color: #555;
+        text-decoration: none;
+      }
+
+      .cv-contact-row a:hover {
+        color: #0066cc;
+      }
+
+      .cv-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* About */
+      .cv-about {
+        margin-bottom: 28px;
+        color: #333;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      /* Sections */
+      .cv-section {
+        margin-bottom: 28px;
+      }
+
+      .cv-section h2 {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: #1a1a1a;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+      }
+
+      /* Experience items */
+      .cv-role {
+        margin-bottom: 18px;
+      }
+
+      .cv-role:last-child {
+        margin-bottom: 0;
+      }
+
+      .cv-role-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 3px;
+      }
+
+      .cv-role-title {
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .cv-role-period {
+        font-size: 13px;
+        color: #777;
+        white-space: nowrap;
+      }
+
+      .cv-role-company {
+        font-size: 13px;
+        color: #555;
+        margin-bottom: 4px;
+      }
+
+      .cv-role-desc {
+        font-size: 13.5px;
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 5px;
+      }
+
+      .cv-role-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .cv-tag {
+        font-size: 11px;
+        padding: 2px 8px;
+        background: #f3f3f3;
+        color: #555;
+        border-radius: 3px;
+      }
+
+      /* Education */
+      .cv-edu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 2px;
+      }
+
+      .cv-edu-degree {
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .cv-edu-period {
+        font-size: 13px;
+        color: #777;
+      }
+
+      .cv-edu-institution {
+        font-size: 13px;
+        color: #555;
+      }
+
+      /* Skills grid */
+      .cv-skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .cv-skill-group h3 {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .cv-skill-group p {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      /* Print styles */
+      @media print {
+        body { font-size: 13px; }
+
+        .cv-page { padding: 0; }
+
+        .cv-topbar { display: none !important; }
+
+        .cv-header { margin-bottom: 20px; padding-bottom: 16px; gap: 16px; }
+        .cv-header h1 { font-size: 24px; }
+        .cv-header .role { font-size: 15px; }
+        .cv-photo { width: 80px; height: 80px; }
+
+        .cv-about { margin-bottom: 20px; }
+
+        .cv-section { margin-bottom: 20px; }
+        .cv-section h2 { margin-bottom: 10px; }
+
+        .cv-role { margin-bottom: 14px; }
+        .cv-role { break-inside: avoid; }
+
+        .cv-tag {
+          background: none;
+          border: 1px solid #ccc;
+          padding: 1px 6px;
+        }
+
+        .cv-contact-row a { color: #1a1a1a; }
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .cv-page { padding: 24px 20px; }
+        .cv-header { gap: 16px; }
+        .cv-header h1 { font-size: 24px; }
+        .cv-photo { width: 72px; height: 72px; }
+        .cv-skills-grid { grid-template-columns: 1fr; }
+        .cv-role-header { flex-direction: column; gap: 0; }
+        .cv-edu-header { flex-direction: column; gap: 0; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="cv-page">
+      <!-- Top bar (hidden on print) -->
+      <div class="cv-topbar">
+        <a href={`/${lang}/`}>&larr; {t.cv.backToPortfolio}</a>
+        <div class="cv-actions">
+          <a href={`/${otherLang}/cv`} class="lang-switch">
+            {lang === 'en' ? 'ES' : 'EN'}
+          </a>
+          <button class="btn-print" onclick="window.print()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            {t.cv.print}
+          </button>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <header class="cv-header">
+        <img src="/photo-placeholder.svg" alt="Luis Enrique Ramos" class="cv-photo" />
+        <div class="cv-header-info">
+        <h1>Luis Enrique Ramos</h1>
+        <p class="role">{t.hero.role}</p>
+        <div class="cv-contact-row">
+          <span class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            {t.about.locationValue}
+          </span>
+          <span class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
+          </span>
+          <span class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href={`https://${t.contact.linkedin}`} target="_blank">{t.contact.linkedin}</a>
+          </span>
+          <span class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <a href={`https://${t.contact.github}`} target="_blank">{t.contact.github}</a>
+          </span>
+        </div>
+        </div>
+      </header>
+
+      <!-- About -->
+      <p class="cv-about">{t.cv.about}</p>
+
+      <!-- Experience -->
+      <section class="cv-section">
+        <h2>{t.cv.sections.experience}</h2>
+        {t.experience.roles.map((role) => (
+          <div class="cv-role">
+            <div class="cv-role-header">
+              <span class="cv-role-title">{role.title}</span>
+              <span class="cv-role-period">{role.period}</span>
+            </div>
+            <p class="cv-role-company">{role.company}</p>
+            <p class="cv-role-desc">{role.description}</p>
+            <div class="cv-role-stack">
+              {role.stack.map((tech) => (
+                <span class="cv-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <!-- Education -->
+      <section class="cv-section">
+        <h2>{t.cv.sections.education}</h2>
+        <div>
+          <div class="cv-edu-header">
+            <span class="cv-edu-degree">{t.cv.education.degree}</span>
+            <span class="cv-edu-period">{t.cv.education.period}</span>
+          </div>
+          <p class="cv-edu-institution">{t.cv.education.institution}</p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="cv-section">
+        <h2>{t.cv.sections.skills}</h2>
+        <div class="cv-skills-grid">
+          {t.skills.categories.map((cat) => (
+            <div class="cv-skill-group">
+              <h3>{cat.name}</h3>
+              <p>{cat.items.join(', ')}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

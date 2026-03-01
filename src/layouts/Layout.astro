@@ -9,7 +9,7 @@ interface Props {
   description?: string;
 }
 
-const { title, lang, description = 'Alex Rivera — Senior Full-Stack Developer portfolio and CV.' } = Astro.props;
+const { title, lang, description = 'Luis Ramos — Senior Software Engineer portfolio and CV.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,7 +28,7 @@ const { title, lang, description = 'Alex Rivera — Senior Full-Stack Developer 
     />
     <title>{title}</title>
   </head>
-  <body class="bg-[#09090f] text-[#e8e8f0] antialiased">
+  <body class="bg-[#09090f] text-[#e8e8f0] antialiased overflow-x-hidden">
     <Nav lang={lang} />
     <main>
       <slot />
@@ -36,7 +36,7 @@ const { title, lang, description = 'Alex Rivera — Senior Full-Stack Developer 
     <footer class="border-t border-[#2a2a3a] py-6 sm:py-8 mt-12 sm:mt-16">
       <div class="max-w-6xl mx-auto px-5 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 text-[#6b7280] text-xs sm:text-sm font-mono">
         <span>
-          {lang === 'en' ? '© 2024 Alex Rivera. All rights reserved.' : '© 2024 Alex Rivera. Todos los derechos reservados.'}
+          {lang === 'en' ? '© 2024 Luis Ramos. All rights reserved.' : '© 2024 Luis Ramos. Todos los derechos reservados.'}
         </span>
         <span class="text-[10px] sm:text-xs">
           {lang === 'en' ? 'Built with Astro & Tailwind CSS' : 'Hecho con Astro & Tailwind CSS'}

@@ -11,24 +11,24 @@ export const en = {
   // Hero
   hero: {
     greeting: 'Hello, I\'m',
-    role: 'Senior Full-Stack Developer',
-    tagline: 'I build scalable systems and elegant interfaces — from database to pixel.',
+    role: 'Senior Software Engineer',
+    tagline: '7+ years building web applications — focused on frontend architecture, process improvement, and developer experience.',
     cta: 'View my work',
-    available: 'Available for freelance',
+    available: 'Available for new projects',
   },
 
   // About
   about: {
     title: 'About me',
     label: '01 / about',
-    bio1: 'I\'m a full-stack developer with 8+ years of experience crafting digital products that blend performance with great UX. I love working at the intersection of backend architecture and frontend craftsmanship.',
-    bio2: 'When I\'m not writing code, I\'m probably hiking a trail in the mountains, experimenting with espresso ratios, or reading about distributed systems.',
+    bio1: 'I\'m a software engineer with 7+ years of experience in web development, currently serving as Tech Lead. I\'ve designed Design Systems with Tailwind CSS, created component libraries with React/Vite, and established pre-configured Next.js templates.',
+    bio2: 'I\'m passionate about frontend architecture, process improvement, and enhancing developer experience (DX) in every team I work with.',
     location: 'Based in',
-    locationValue: 'Barcelona, Spain',
+    locationValue: 'Santiago, Chile',
     languages: 'Languages',
-    languagesValue: 'English, Spanish, Portuguese',
+    languagesValue: 'Spanish, English',
     education: 'Education',
-    educationValue: 'B.Sc. Computer Science — UPC, 2016',
+    educationValue: 'Technical Diploma in CS — IUTRBF, 2017',
   },
 
   // Experience
@@ -38,25 +38,46 @@ export const en = {
     present: 'Present',
     roles: [
       {
-        title: 'Senior Full-Stack Developer',
-        company: 'NovaTech',
-        period: '2021 — Present',
-        description: 'Lead architect on a SaaS analytics platform serving 200k+ users. Migrated monolith to microservices, reducing p99 latency by 60%. Mentored a team of 6 engineers.',
-        stack: ['TypeScript', 'React', 'Node.js', 'PostgreSQL', 'AWS'],
+        title: 'Tech Lead',
+        company: 'MetLife (Imagemaker S.A.)',
+        period: '2024 — Present',
+        description: 'Managing a 4-person development team, implementing design patterns and best practices. Promoted SOLID principles, implemented a Business Rule Engine, and optimized SQL Server database for 2000+ users.',
+        stack: ['React', 'NestJS', 'Groovy', 'SQL Server', 'Azure DevOps'],
       },
       {
-        title: 'Full-Stack Developer',
-        company: 'CodeCraft Studio',
+        title: 'Software Developer',
+        company: 'MetLife (Imagemaker S.A.)',
+        period: '2023 — 2024',
+        description: 'React web application development for insurance client/sales management. NestJS backend services for a 2000+ user application. Promoted SOLID principles and pair programming practices.',
+        stack: ['React', 'NestJS', 'TypeScript', 'SQL Server'],
+      },
+      {
+        title: 'Frontend Tech Lead',
+        company: 'Preuniversitario Pedro de Valdivia',
+        period: '2022 — 2023',
+        description: 'Led frontend team on React/Next.js educational applications. Created a Tailwind CSS Design System with the UI/UX team. Developed a custom component package and a pre-configured Next.js template.',
+        stack: ['React', 'Next.js', 'Tailwind CSS', 'React Query', 'Next Auth'],
+      },
+      {
+        title: 'Senior Frontend Developer',
+        company: 'Preuniversitario Pedro de Valdivia',
+        period: '2021 — 2022',
+        description: 'React/Next.js development for educational management systems.',
+        stack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      },
+      {
+        title: 'Fullstack Developer',
+        company: 'BIOHAZARD STUDIOS',
         period: '2018 — 2021',
-        description: 'Built client-facing web apps and internal tooling for a product agency. Delivered 15+ projects across fintech, health, and e-commerce verticals.',
-        stack: ['React', 'Node.js', 'GraphQL', 'MongoDB', 'Docker'],
+        description: 'Built static and dynamic websites, React SPAs, PHP/Laravel REST APIs, and hybrid apps with Cordova.',
+        stack: ['React', 'PHP', 'Laravel', 'JavaScript', 'MySQL'],
       },
       {
-        title: 'Junior Frontend Developer',
-        company: 'PixelWave',
-        period: '2016 — 2018',
-        description: 'Developed pixel-perfect responsive UIs from designer mockups. Improved Lighthouse performance scores site-wide from ~55 to 90+.',
-        stack: ['JavaScript', 'Vue.js', 'SCSS', 'Figma'],
+        title: 'Junior Web Developer',
+        company: 'Meditron C.A.',
+        period: '2016 — 2017',
+        description: 'PHP inventory system maintenance and new Laravel/jQuery inventory system development. Introduced Git to the team.',
+        stack: ['PHP', 'Laravel', 'jQuery', 'MySQL', 'Git'],
       },
     ],
   },
@@ -68,15 +89,19 @@ export const en = {
     categories: [
       {
         name: 'Frontend',
-        items: ['TypeScript', 'React', 'Astro', 'Next.js', 'Tailwind CSS', 'Figma'],
+        items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Atomic Design'],
       },
       {
         name: 'Backend',
-        items: ['Node.js', 'PostgreSQL', 'Redis', 'GraphQL', 'REST APIs', 'Python'],
+        items: ['Node.js', 'NestJS', 'PHP', 'Laravel'],
       },
       {
-        name: 'Infrastructure',
-        items: ['Docker', 'AWS', 'GitHub Actions', 'Terraform', 'Linux', 'Nginx'],
+        name: 'Databases',
+        items: ['MySQL', 'SQL Server'],
+      },
+      {
+        name: 'DevOps / Tools',
+        items: ['Git', 'GitHub', 'Microsoft Azure', 'Azure DevOps'],
       },
     ],
   },
@@ -86,17 +111,35 @@ export const en = {
     title: 'Let\'s talk',
     label: '04 / contact',
     description: 'Have a project in mind or just want to connect? My inbox is always open.',
-    email: 'alex@rivera.dev',
-    github: 'github.com/alexrivera',
-    linkedin: 'linkedin.com/in/alexrivera',
-    twitter: '@alexrivera_dev',
+    email: 'me@luisr.dev',
+    github: 'github.com/luisrdev',
+    linkedin: 'linkedin.com/in/luisrdev',
+    twitter: '',
     cta: 'Send me an email',
+  },
+
+  // CV page
+  cv: {
+    pageTitle: 'Luis Ramos — CV',
+    about: 'Senior Software Engineer with 7+ years of experience in web development. Currently serving as Tech Lead, focused on frontend architecture, design systems, process improvement, and developer experience.',
+    sections: {
+      experience: 'Experience',
+      education: 'Education',
+      skills: 'Skills',
+    },
+    education: {
+      degree: 'Technical Diploma in Computer Science',
+      institution: 'IUTRBF — Instituto Universitario de Tecnología de la Región Capital',
+      period: '2014 — 2017',
+    },
+    print: 'Print / Download PDF',
+    backToPortfolio: 'Back to portfolio',
   },
 
   // Footer
   footer: {
     built: 'Built with Astro & Tailwind CSS',
-    rights: 'Alex Rivera. All rights reserved.',
+    rights: 'Luis Ramos. All rights reserved.',
   },
 };
 
