@@ -1,0 +1,102 @@
+---
+import type { Lang } from '../i18n';
+import { useTranslations } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const otherLang = lang === 'en' ? 'es' : 'en';
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 border-b border-[#2a2a3a] bg-[#09090f]/80 backdrop-blur-md"
+>
+  <nav class="max-w-6xl mx-auto px-5 sm:px-6 h-12 sm:h-14 flex items-center justify-between">
+    <!-- Logo / name -->
+    <a
+      href={`/${lang}/`}
+      class="font-mono text-xs sm:text-sm font-bold text-[#00d4ff] tracking-tight hover:opacity-80 transition-opacity"
+    >
+      <span class="text-[#6b7280]">~/</span>alex-rivera
+      <span class="cursor-blink text-[#00d4ff]">_</span>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-6 lg:gap-8">
+      <a href={`/${lang}/#about`} class="nav-link">{t.nav.about}</a>
+      <a href={`/${lang}/#experience`} class="nav-link">{t.nav.experience}</a>
+      <a href={`/${lang}/#skills`} class="nav-link">{t.nav.skills}</a>
+      <a href={`/${lang}/#contact`} class="nav-link">{t.nav.contact}</a>
+    </div>
+
+    <!-- Lang switcher + mobile menu button -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a
+        href={`/${otherLang}/`}
+        class="font-mono text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded border border-[#2a2a3a] text-[#6b7280] hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all duration-200"
+      >
+        {t.nav.switchLang}
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-1.5 text-[#6b7280] hover:text-[#e8e8f0] transition-colors"
+        aria-label="Menu"
+      >
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+          <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-[#2a2a3a] bg-[#09090f]/95 backdrop-blur-md"
+  >
+    <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-4">
+      <a href={`/${lang}/#about`} class="nav-link mobile-nav-link">{t.nav.about}</a>
+      <a href={`/${lang}/#experience`} class="nav-link mobile-nav-link">{t.nav.experience}</a>
+      <a href={`/${lang}/#skills`} class="nav-link mobile-nav-link">{t.nav.skills}</a>
+      <a href={`/${lang}/#contact`} class="nav-link mobile-nav-link">{t.nav.contact}</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    font-size: 0.8125rem;
+    color: #6b7280;
+    font-family: var(--font-mono);
+    transition: color 0.15s ease;
+    text-decoration: none;
+  }
+  .nav-link:hover {
+    color: #e8e8f0;
+  }
+  .mobile-nav-link {
+    font-size: 0.875rem;
+    padding: 0.25rem 0;
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const mobileLinks = menu?.querySelectorAll('a');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+
+  mobileLinks?.forEach((link) => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+    });
+  });
+</script>

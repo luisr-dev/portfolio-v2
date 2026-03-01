@@ -1,0 +1,76 @@
+---
+import type { Translations } from '../i18n/en';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+const e = t.experience;
+---
+
+<section id="experience" class="py-16 sm:py-20 md:py-24 border-t border-[#2a2a3a]">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <!-- Section label -->
+    <div class="flex items-center gap-4 mb-10 sm:mb-12">
+      <span class="font-mono text-xs text-[#00d4ff] tracking-widest uppercase">{e.label}</span>
+      <div class="h-px flex-1 bg-gradient-to-r from-[#2a2a3a] to-transparent"></div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-8 sm:mb-10">{e.title}</h2>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div
+        class="absolute left-0 top-2 bottom-2 w-px hidden sm:block"
+        style="background: linear-gradient(to bottom, #00d4ff, #7b61ff, #2a2a3a);"
+      ></div>
+
+      <div class="flex flex-col gap-6 sm:gap-8 sm:pl-8">
+        {e.roles.map((role, i) => (
+          <div class="relative group">
+            <!-- Dot on timeline (hidden on mobile) -->
+            <div
+              class="absolute -left-[2.15rem] top-1.5 w-3 h-3 rounded-full border-2 border-[#00d4ff] group-hover:scale-125 transition-transform duration-200 hidden sm:block"
+              style={`background: ${i === 0 ? '#00d4ff' : '#09090f'};`}
+            ></div>
+
+            <!-- Mobile: colored left border instead of timeline -->
+            <div
+              class="rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-[#2a2a3a] hover:border-[#3a3a4a] transition-all duration-300 hover:-translate-y-0.5 sm:border-l border-l-2 sm:border-l"
+              style={`background: #111118; border-left-color: ${i === 0 ? '#00d4ff' : '#7b61ff'};`}
+            >
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                <div>
+                  <h3 class="text-base sm:text-lg font-semibold text-[#e8e8f0]">{role.title}</h3>
+                  <p class="font-mono text-xs sm:text-sm text-[#00d4ff]">@ {role.company}</p>
+                </div>
+                <span
+                  class="font-mono text-[11px] sm:text-xs px-2.5 py-0.5 sm:py-1 rounded-full self-start whitespace-nowrap mt-1 sm:mt-0"
+                  style="background: #1a1a24; color: #6b7280; border: 1px solid #2a2a3a;"
+                >
+                  {role.period}
+                </span>
+              </div>
+
+              <p class="text-[#9ca3af] text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">{role.description}</p>
+
+              <!-- Stack pills -->
+              <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                {role.stack.map((tech) => (
+                  <span
+                    class="font-mono text-[11px] sm:text-xs px-2 py-0.5 rounded"
+                    style="background: #00d4ff12; color: #00d4ff; border: 1px solid #00d4ff26;"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

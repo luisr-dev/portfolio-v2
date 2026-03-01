@@ -1,0 +1,133 @@
+---
+import type { Translations } from '../i18n/en';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section
+  class="relative min-h-svh flex items-center bg-grid overflow-hidden"
+  style="background-color: #09090f;"
+>
+  <!-- Gradient glow top-left -->
+  <div
+    class="pointer-events-none absolute -top-40 -left-40 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full opacity-10"
+    style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"
+  ></div>
+  <!-- Gradient glow bottom-right -->
+  <div
+    class="pointer-events-none absolute -bottom-40 -right-20 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full opacity-8"
+    style="background: radial-gradient(circle, #ff6b6b 0%, transparent 70%);"
+  ></div>
+
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 w-full">
+    <div class="grid md:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
+      <div>
+        <!-- Available badge -->
+        <div class="flex items-center gap-3 mb-4 sm:mb-5 opacity-0 animate-fadeInUp animate-delay-1">
+          <span
+            class="font-mono text-xs sm:text-sm px-3 py-1 rounded-full border text-[#00d4ff] border-[#00d4ff26]"
+            style="background: #00d4ff12;"
+          >
+            <span class="inline-block w-2 h-2 rounded-full bg-[#4ade80] mr-2 animate-pulse"></span>
+            {t.hero.available}
+          </span>
+        </div>
+
+        <!-- Greeting -->
+        <p class="font-mono text-[#6b7280] text-sm sm:text-base mb-1.5 sm:mb-2 opacity-0 animate-fadeInUp animate-delay-2">
+          {t.hero.greeting}
+        </p>
+
+        <!-- Name -->
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-3 sm:mb-4 opacity-0 animate-fadeInUp animate-delay-2"
+        >
+          Alex
+          <br />
+          <span
+            class="text-transparent"
+            style="background: linear-gradient(135deg, #00d4ff 0%, #7b61ff 100%); -webkit-background-clip: text; background-clip: text;"
+          >
+            Rivera
+          </span>
+          <span class="cursor-blink text-[#00d4ff]">.</span>
+        </h1>
+
+        <!-- Role -->
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-5 sm:mb-6 opacity-0 animate-fadeInUp animate-delay-3">
+          <span class="font-mono text-xs text-[#6b7280]">// role</span>
+          <span
+            class="font-mono text-xs sm:text-sm font-medium px-2.5 sm:px-3 py-1 rounded"
+            style="background: #1a1a24; color: #e8e8f0; border: 1px solid #2a2a3a;"
+          >
+            {t.hero.role}
+          </span>
+        </div>
+
+        <!-- Tagline -->
+        <p class="text-base sm:text-lg text-[#9ca3af] max-w-xl leading-relaxed mb-8 sm:mb-10 opacity-0 animate-fadeInUp animate-delay-4">
+          {t.hero.tagline}
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 opacity-0 animate-fadeInUp animate-delay-5">
+          <a
+            href="#experience"
+            class="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-lg font-mono text-sm font-medium text-[#09090f] transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
+            style="background: linear-gradient(135deg, #00d4ff, #7b61ff);"
+          >
+            {t.hero.cta}
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-lg font-mono text-sm font-medium border border-[#2a2a3a] text-[#e8e8f0] hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all duration-200"
+          >
+            {t.nav.contact}
+          </a>
+        </div>
+      </div>
+
+      <!-- Decorative code card (hidden on small screens) -->
+      <div class="hidden lg:block opacity-0 animate-fadeInUp animate-delay-3">
+        <div
+          class="rounded-xl overflow-hidden border border-[#2a2a3a] w-72"
+          style="background: #111118;"
+        >
+          <!-- Titlebar -->
+          <div class="flex items-center gap-2 px-4 py-2.5 border-b border-[#2a2a3a]">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff6b6b] opacity-80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#fbbf24] opacity-80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#4ade80] opacity-80"></span>
+            <span class="ml-3 font-mono text-xs text-[#6b7280]">alex.ts</span>
+          </div>
+          <!-- Code -->
+          <div class="p-4 font-mono text-xs leading-6 text-[#9ca3af]">
+            <p><span class="text-[#7b61ff]">const</span> <span class="text-[#00d4ff]">alex</span> = &#123;</p>
+            <p class="ml-4"><span class="text-[#e8e8f0]">name</span>: <span class="text-[#4ade80]">"Alex Rivera"</span>,</p>
+            <p class="ml-4"><span class="text-[#e8e8f0]">yoe</span>: <span class="text-[#ff6b6b]">8</span>,</p>
+            <p class="ml-4"><span class="text-[#e8e8f0]">loves</span>: [</p>
+            <p class="ml-8"><span class="text-[#4ade80]">"clean code"</span>,</p>
+            <p class="ml-8"><span class="text-[#4ade80]">"great UX"</span>,</p>
+            <p class="ml-8"><span class="text-[#4ade80]">"strong coffee"</span>,</p>
+            <p class="ml-4">],</p>
+            <p class="ml-4"><span class="text-[#e8e8f0]">open</span>: <span class="text-[#7b61ff]">true</span>,</p>
+            <p>&#125;;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator (hidden on very small screens) -->
+    <div class="hidden sm:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-40">
+      <span class="font-mono text-xs text-[#6b7280]">scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-[#6b7280] to-transparent"></div>
+    </div>
+  </div>
+</section>

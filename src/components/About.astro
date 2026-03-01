@@ -1,0 +1,48 @@
+---
+import type { Translations } from '../i18n/en';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+const a = t.about;
+---
+
+<section id="about" class="py-16 sm:py-20 md:py-24 border-t border-[#2a2a3a]">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <!-- Section label -->
+    <div class="flex items-center gap-4 mb-10 sm:mb-12">
+      <span class="font-mono text-xs text-[#00d4ff] tracking-widest uppercase">{a.label}</span>
+      <div class="h-px flex-1 bg-gradient-to-r from-[#2a2a3a] to-transparent"></div>
+    </div>
+
+    <div class="grid md:grid-cols-[2fr_1fr] gap-10 md:gap-14 items-start">
+      <!-- Bio -->
+      <div>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-5 sm:mb-6">{a.title}</h2>
+        <p class="text-[#9ca3af] leading-relaxed text-sm sm:text-base mb-4">{a.bio1}</p>
+        <p class="text-[#9ca3af] leading-relaxed text-sm sm:text-base">{a.bio2}</p>
+      </div>
+
+      <!-- Info cards -->
+      <div class="flex flex-col gap-3">
+        {[
+          { label: a.location, value: a.locationValue, icon: '📍' },
+          { label: a.languages, value: a.languagesValue, icon: '🌐' },
+          { label: a.education, value: a.educationValue, icon: '🎓' },
+        ].map(({ label, value, icon }) => (
+          <div
+            class="rounded-lg sm:rounded-xl p-3.5 sm:p-4 border border-[#2a2a3a] hover:border-[#3a3a4a] transition-colors duration-200"
+            style="background: #111118;"
+          >
+            <p class="font-mono text-[10px] text-[#6b7280] uppercase tracking-widest mb-1">
+              {icon} {label}
+            </p>
+            <p class="text-xs sm:text-sm text-[#e8e8f0] font-medium">{value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

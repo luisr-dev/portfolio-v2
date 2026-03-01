@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Experience from '../../components/Experience.astro';
+import Skills from '../../components/Skills.astro';
+import Contact from '../../components/Contact.astro';
+import { useTranslations } from '../../i18n';
+import type { Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = useTranslations(lang);
+
+const titles: Record<Lang, string> = {
+  en: 'Alex Rivera — Senior Full-Stack Developer',
+  es: 'Alex Rivera — Desarrollador Full-Stack Senior',
+};
+
+const descriptions: Record<Lang, string> = {
+  en: 'Portfolio and CV of Alex Rivera, Senior Full-Stack Developer with 8+ years of experience.',
+  es: 'Portafolio y CV de Alex Rivera, Desarrollador Full-Stack Senior con más de 8 años de experiencia.',
+};
+---
+
+<Layout title={titles[lang]} lang={lang} description={descriptions[lang]}>
+  <Hero t={t} />
+  <About t={t} />
+  <Experience t={t} />
+  <Skills t={t} />
+  <Contact t={t} />
+</Layout>
