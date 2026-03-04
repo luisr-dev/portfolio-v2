@@ -12,7 +12,7 @@ export const en = {
   hero: {
     greeting: 'Hello, I\'m',
     role: 'Senior Software Engineer',
-    tagline: '7+ years building web applications — focused on frontend architecture, process improvement, and developer experience.',
+    tagline: '7+ years building web applications — focused on frontend architecture, process improvement, and developer experience .',
     cta: 'View my work',
     available: 'Available for new projects',
   },
@@ -21,8 +21,8 @@ export const en = {
   about: {
     title: 'About me',
     label: '01 / about',
-    bio1: 'I\'m a software engineer with 7+ years of experience in web development, currently serving as Tech Lead. I\'ve designed Design Systems with Tailwind CSS, created component libraries with React/Vite, and established pre-configured Next.js templates.',
-    bio2: 'I\'m passionate about frontend architecture, process improvement, and enhancing developer experience (DX) in every team I work with.',
+    bio1: 'I\'m a software engineer with 7+ years of experience in web development. Currently Tech Lead at MetLife, I architect scalable systems using modern full-stack technologies — React frontends, Spring Boot/Groovy BFF, and NestJS microservices. I design clean, maintainable code through SOLID principles and comprehensive system observability.',
+    bio2: 'Passionate about frontend architecture, enterprise patterns, and building high-performing teams. I focus on process improvement, architectural excellence, and developer experience (DX) across all projects.',
     location: 'Based in',
     locationValue: 'Santiago, Chile',
     languages: 'Languages',

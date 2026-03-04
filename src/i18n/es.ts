@@ -23,8 +23,8 @@ export const es: Translations = {
   about: {
     title: 'Sobre mí',
     label: '01 / sobre mí',
-    bio1: 'Soy un ingeniero de software con más de 7 años de experiencia en desarrollo web, actualmente desempeñándome como Tech Lead. He diseñado Design Systems con Tailwind CSS, creado librerías de componentes con React/Vite, y establecido templates preconfigurados con Next.js.',
-    bio2: 'Me apasiona la arquitectura frontend, la mejora de procesos y potenciar la experiencia de desarrollador (DX) en cada equipo donde trabajo.',
+    bio1: 'Ingeniero de software con 7+ años de experiencia en desarrollo web. Actualmente Tech Lead en MetLife, architecto sistemas escalables usando tecnologías full-stack modernas — frontends con React, BFF con Spring Boot/Groovy, y microservicios con NestJS. Diseño código limpio y mantenible aplicando principios SOLID y observabilidad comprehensiva del sistema.',
+    bio2: 'Apasionado por arquitectura frontend, patrones empresariales y construcción de equipos de alto rendimiento. Me enfoco en mejora de procesos, excelencia arquitectónica y experiencia de desarrollador (DX) en todos los proyectos.',
     location: 'Ubicación',
     locationValue: 'Santiago, Chile',
     languages: 'Idiomas',
