@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import type { Lang } from '../i18n';
+import { Analytics } from '@vercel/analytics/astro';
+import { SpeedInsights } from '@vercel/speed-insights/astro';
 
 interface Props {
   title: string;
@@ -43,5 +45,7 @@ const { title, lang, description = 'Luis Ramos — Senior Software Engineer port
         </span>
       </div>
     </footer>
+    <Analytics />
+    <SpeedInsights />
   </body>
 </html>
