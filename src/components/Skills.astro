@@ -1,5 +1,6 @@
 ---
 import type { Translations } from '../i18n/en';
+import SkillBars from './SkillBars.astro';
 
 interface Props {
   t: Translations;
@@ -64,30 +65,12 @@ const categoryColors = [
     </div>
 
     <!-- Skill proficiency bars -->
-    <div
-      class="mt-6 sm:mt-8 rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 border border-[#2a2a3a] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5"
-      style="background: #111118;"
-    >
-      {[
-        { label: 'TypeScript', pct: 95 },
-        { label: 'React', pct: 90 },
-        { label: 'Node.js', pct: 88 },
-        { label: 'PostgreSQL', pct: 80 },
-        { label: 'AWS', pct: 72 },
-      ].map(({ label, pct }) => (
-        <div>
-          <div class="flex justify-between mb-1.5">
-            <span class="font-mono text-[11px] sm:text-xs text-[#9ca3af]">{label}</span>
-            <span class="font-mono text-[11px] sm:text-xs text-[#6b7280]">{pct}%</span>
-          </div>
-          <div class="h-1.5 rounded-full" style="background: #2a2a3a;">
-            <div
-              class="h-1.5 rounded-full"
-              style={`width: ${pct}%; background: linear-gradient(90deg, #00d4ff, #7b61ff);`}
-            ></div>
-          </div>
-        </div>
-      ))}
-    </div>
+    <!-- <SkillBars skills={[
+      { label: 'TypeScript', pct: 95 },
+      { label: 'React', pct: 90 },
+      { label: 'Node.js', pct: 88 },
+      { label: 'PostgreSQL', pct: 80 },
+      { label: 'AWS', pct: 72 },
+    ]} /> -->
   </div>
 </section>
