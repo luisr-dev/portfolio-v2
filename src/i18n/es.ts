@@ -23,7 +23,7 @@ export const es: Translations = {
   about: {
     title: 'Sobre mí',
     label: '01 / sobre mí',
-    bio1: 'Ingeniero de software con 7+ años de experiencia en desarrollo web. Actualmente Tech Lead en MetLife, architecto sistemas escalables usando tecnologías full-stack modernas — frontends con React, orquestación Backend-for-Frontend (BFF), y microservicios. Diseño código limpio y mantenible aplicando principios SOLID y observabilidad comprehensiva del sistema.',
+    bio1: 'Senior Software Developer con 7+ años de experiencia en desarrollo web. Architecto sistemas escalables usando tecnologías full-stack modernas — frontends con React, orquestación Backend-for-Frontend (BFF), y microservicios. Diseño código limpio y mantenible aplicando principios SOLID y observabilidad comprehensiva del sistema.',
     bio2: 'Apasionado por arquitectura frontend, patrones empresariales y construcción de equipos de alto rendimiento. Me enfoco en mejora de procesos, excelencia arquitectónica y experiencia de desarrollador (DX) en todos los proyectos.',
     location: 'Ubicación',
     locationValue: 'Santiago, Chile',
@@ -124,7 +124,7 @@ export const es: Translations = {
   cv: {
     pageTitle: 'Luis Ramos — CV',
     authorName: 'Luis Enrique Ramos',
-    about: 'Tech Lead en MetLife con 7+ años de experiencia arquitectando sistemas escalables. Especializado en desarrollo full-stack con enfoque en arquitectura frontend, orquestación Backend-for-Frontend (BFF), y patrones de microservicios. Comprometido con principios SOLID, observabilidad de sistemas y construcción de equipos de alto rendimiento.',
+    about: 'Senior Software Developer con 7+ años de experiencia en desarrollo web. Especializado en arquitectura full-stack con expertise en desarrollo frontend, orquestación Backend-for-Frontend (BFF), y patrones de microservicios. Comprometido con principios SOLID, observabilidad de sistemas y construcción de soluciones escalables y mantenibles.',
     sections: {
       experience: 'Experiencia',
       education: 'Educación',
