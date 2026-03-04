@@ -21,7 +21,7 @@ export const en = {
   about: {
     title: 'About me',
     label: '01 / about',
-    bio1: 'I\'m a software engineer with 7+ years of experience in web development. Currently Tech Lead at MetLife, I architect scalable systems using modern full-stack technologies — React frontends, Spring Boot/Groovy BFF, and NestJS microservices. I design clean, maintainable code through SOLID principles and comprehensive system observability.',
+    bio1: 'I\'m a software engineer with 7+ years of experience in web development. Currently Tech Lead at MetLife, I architect scalable systems using modern full-stack technologies — React frontends and NestJS microservices. I design clean, maintainable code through SOLID principles and comprehensive system observability.',
     bio2: 'Passionate about frontend architecture, enterprise patterns, and building high-performing teams. I focus on process improvement, architectural excellence, and developer experience (DX) across all projects.',
     location: 'Based in',
     locationValue: 'Santiago, Chile',
