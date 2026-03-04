@@ -122,7 +122,7 @@ export const en = {
   cv: {
     pageTitle: 'Luis Ramos — CV',
     authorName: 'Luis Enrique Ramos',
-    about: 'Senior Software Engineer with 7+ years of experience in web development. Currently serving as Tech Lead, focused on frontend architecture, design systems, process improvement, and developer experience.',
+    about: 'Tech Lead at MetLife with 7+ years of experience architecting scalable systems. Specialized in full-stack web development with a focus on frontend architecture, Backend-for-Frontend (BFF) orchestration, and microservices patterns. Committed to SOLID principles, system observability, and building high-performing teams.',
     sections: {
       experience: 'Experience',
       education: 'Education',
