@@ -43,8 +43,8 @@ export const es: Translations = {
         title: 'Tech Lead',
         company: 'MetLife (Imagemaker S.A.)',
         period: '2024 — Presente',
-        description: 'Lidero un equipo de 4 desarrolladores implementando patrones de diseño y buenas prácticas. Promoví principios SOLID, implementé un Motor de Reglas de Negocio y optimicé la base de datos SQL Server para más de 2000 usuarios.',
-        stack: ['React', 'NestJS', 'Groovy', 'SQL Server', 'Azure DevOps'],
+        description: 'Lideré un equipo de 6–10 ingenieros en MetLife, estableciendo principios SOLID y patrones arquitectónicos de nivel empresarial. Diseñé e implementé una arquitectura Backend-for-Frontend (BFF) con Spring Boot y Groovy, orquestando microservicios mediante Azure API Management. Desarrollé APIs de microservicios con NestJS e interfaces React con observabilidad en tiempo real usando Elastic Stack para metrics y distributed tracing. Colaboré con DevOps en pipelines CI/CD, Infrastructure as Code (IaC) y estrategias de deployment en Azure soportando 1000+ usuarios concurrentes en entornos de producción críticos.',
+        stack: ['React', 'Spring Boot', 'Groovy', 'NestJS', 'Azure API Management', 'Elastic Stack', 'Azure DevOps'],
       },
       {
         title: 'Software Developer',

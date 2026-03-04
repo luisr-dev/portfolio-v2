@@ -41,8 +41,8 @@ export const en = {
         title: 'Tech Lead',
         company: 'MetLife (Imagemaker S.A.)',
         period: '2024 — Present',
-        description: 'Managing a 4-person development team, implementing design patterns and best practices. Promoted SOLID principles, implemented a Business Rule Engine, and optimized SQL Server database for 2000+ users.',
-        stack: ['React', 'NestJS', 'Groovy', 'SQL Server', 'Azure DevOps'],
+        description: 'Led a 6–10 person engineering team at MetLife, establishing SOLID principles and enterprise-grade architectural standards. Architected a Backend-for-Frontend (BFF) using Spring Boot and Groovy, orchestrating microservices APIs via Azure API Management. Developed NestJS-based microservices (API Systems) and React frontends with real-time observability using Elastic Stack. Collaborated with DevOps on CI/CD pipelines, Infrastructure as Code, and cloud deployment strategies supporting 1000+ concurrent users in production.',
+        stack: ['React', 'Spring Boot', 'Groovy', 'NestJS', 'Azure API Management', 'Elastic Stack', 'Azure DevOps'],
       },
       {
         title: 'Software Developer',
