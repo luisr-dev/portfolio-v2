@@ -50,7 +50,7 @@ export const es: Translations = {
         title: 'Software Developer',
         company: 'MetLife (Imagemaker S.A.)',
         period: '2023 — 2024',
-        description: 'Desarrollo de aplicaciones web React para gestión de clientes/ventas de seguros. Servicios backend con NestJS para una aplicación con más de 2000 usuarios. Promoví principios SOLID y prácticas de pair programming.',
+        description: 'Desarrollo de aplicaciones web React para gestión de clientes/ventas de seguros. Servicios backend con NestJS para una aplicación con más de 200+ usuarios. Promoví principios SOLID y prácticas de pair programming.',
         stack: ['React', 'NestJS', 'TypeScript', 'SQL Server'],
       },
       {

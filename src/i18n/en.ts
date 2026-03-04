@@ -48,7 +48,7 @@ export const en = {
         title: 'Software Developer',
         company: 'MetLife (Imagemaker S.A.)',
         period: '2023 — 2024',
-        description: 'React web application development for insurance client/sales management. NestJS backend services for a 2000+ user application. Promoted SOLID principles and pair programming practices.',
+        description: 'React web application development for insurance client/sales management. NestJS backend services for a 200+ user application. Promoted SOLID principles and pair programming practices.',
         stack: ['React', 'NestJS', 'TypeScript', 'SQL Server'],
       },
       {
